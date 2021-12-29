@@ -11,7 +11,17 @@ function getCalendarDay(currentDate) {
 async function takePicture(page, date) {
     await page.click('text=' + getCalendarDay(date));
     await page.waitForTimeout(500)
-    await page.screenshot({path: "./data/planning_" + (date).isoWeek() + "_" + date.year() + ".png", format: 'A4'})
+
+    let fileName = "./data/planning_" + (date).isoWeek() + "_" + date.year();
+    await page.screenshot({path: fileName + ".png", format: 'A4'})
+
+    await require('sharp')(fileName + ".png")
+        .extract({left: 255, top: 5, width: 1900 - 255, height: 995})
+        .toFile(fileName + "_.png", function (err) {
+            if (err) console.log(err);
+            require('fs').unlinkSync(fileName + ".png")
+            require('fs').renameSync(fileName + "_.png", fileName + ".png")
+        })
 }
 
 (async () => {
@@ -22,7 +32,7 @@ async function takePicture(page, date) {
         // headless: false,
     });
     const context = await browser.newContext({
-        viewport: { width: 1920, height: 1080 }
+        viewport: {width: 1920, height: 1080}
     });
 
     // Open new page
