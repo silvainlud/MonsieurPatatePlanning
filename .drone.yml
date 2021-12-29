@@ -16,3 +16,8 @@ steps:
       registry: registry.silvain.eu:5000
       tags:
         - latest
+---
+kind: signature
+hmac: 370b26729ce842434b166058a0f73e94a40e1bde34c3b2825ed2741c69400a68
+
+...
