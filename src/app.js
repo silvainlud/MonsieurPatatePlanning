@@ -73,8 +73,11 @@ async function takePicture(page, date) {
     });
 
     await page.waitForTimeout(500)
-    await takePicture(page, moment())
-    await takePicture(page, moment().add("1", "weeks"))
+
+    for (let i = 0; i < 5; i++) {
+        await takePicture(page, moment().add(i, "weeks"))
+    }
+
 
 
     await context.close();
