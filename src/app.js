@@ -75,7 +75,7 @@ async function takePicture(page, date) {
     await page.waitForTimeout(500)
 
     for (let i = 0; i < 5; i++) {
-        await takePicture(page, moment().add(i, "weeks"))
+        await takePicture(page, moment().add(i, "weeks").startOf('isoWeek'))
     }
 
 
