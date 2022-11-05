@@ -1,4 +1,16 @@
-# Monsieur Patate Planning
+<p align="center">
+  <a href="https://mpatate.silvain.eu/">
+    <img alt="mpatate" src="https://mpatate.silvain.eu/favicon.png" width="220"/>
+  </a>
+</p>
+
+<h1 align="center">Monsieur Patate Planning</h1>
+<p align="center">
+ <a href="https://drone.silvain.eu/Silvain.eu/MonsieurPatatePlanning">
+  <img src="https://drone.silvain.eu/api/badges/Silvain.eu/MonsieurPatatePlanning/status.svg"/>
+ </a>
+</p>
+
 
 Réalisation de capture d'écran de l'emploi du temps ADE ULCO (https://edt.univ-littoral.fr/).
 
